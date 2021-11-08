@@ -1,0 +1,15 @@
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(10, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(3, kernel_size=(1,2), strides=(1, 2), activation='swish'),
+    keras.layers.BatchNormalization(),
+    keras.layers.Conv2D(3, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=6,  activation='swish'),
+    keras.layers.Dense(units=6,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+accuracy: 0.9533, val_accuracy: 0.8377

@@ -1,0 +1,436 @@
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.AveragePooling2D(pool_size=(2, 2)),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Accuracy :: 82.60
+Val Accuracy :: 68.25
+Remarks :: Low Accuracy, Fix Network
+
+--------------------------------------------------------------------------------------------------------
+
+# model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 1742
+
+Accuracy :: 97.76
+Val Accuracy :: 86.42 
+Remarks :: Improve Network
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=8,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 1822
+
+Accuracy :: 97.67
+Val Accuracy :: 86.76
+Remarks :: No improvement, Reduce Trainable Params
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 962
+
+Accuracy :: 95.53
+Val Accuracy :: 88.67
+Remarks :: Reduced Overfitting, continue shrinking network
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(2, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 556
+
+Accuracy :: 93.74
+Val Accuracy :: 90.05
+Remarks :: Reduced Overfitting, increase Accuracy
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(2, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=8,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 636
+
+Accuracy :: 93.25
+Val Accuracy :: 79.50
+Remarks :: Overfitting, reduce layers, reduce dropout
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.1),
+    keras.layers.Conv2D(2, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 556
+
+Accuracy :: 93.79
+Val Accuracy :: 87.20
+Remarks :: Undo Dropout, Tweak Conv layer
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,3), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(2, kernel_size=(2,3), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 580
+
+Accuracy :: 92.78
+Val Accuracy :: 89.45
+Remarks :: Add wider layers to increase Accuracy
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 830
+
+Accuracy :: 94.57
+Val Accuracy :: 90.92
+Remarks :: Reduce the dropout
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 830
+
+Accuracy :: 93.94
+Val Accuracy :: 87.98
+Remarks :: Increase the dropout, Widen the first layers
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 830
+
+Accuracy :: 93.94
+Val Accuracy :: 87.98
+Remarks :: Increase the dropout, Widen the first layers
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.25),
+    keras.layers.Conv2D(6, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 863
+
+Accuracy :: 94.34
+Val Accuracy :: 88.32
+Remarks :: Undo Dropout, Widen Layer
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 938
+
+Accuracy :: 95.02
+Val Accuracy :: 89.19
+Remarks :: Decrease Layer Width
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 829
+
+Accuracy :: 94.48
+Val Accuracy :: 88.15
+Remarks :: Add Conv Layer, Decrease Layer Width
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(5, kernel_size=(1,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 834
+
+Accuracy :: 93.20
+Val Accuracy :: 90.48
+Remarks :: Train the models for 400 Epochs
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+
+Trainable Parameters :: 760
+
+Accuracy :: 95.23
+Val Accuracy :: 91.18
+Epochs :: 276
+Batch_Size :: 15
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(5, kernel_size=(1,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+Trainable Parameters :: 789
+
+Accuracy :: 95.23
+Val Accuracy :: 91.18
+Epochs :: 276
+Batch_Size :: 20
+
+--------------------------------------------------------------------------------------------------------
+
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Dropout(0.2),
+    keras.layers.Conv2D(6, kernel_size=(2,2), activation='swish'),
+    keras.layers.Conv2D(4, kernel_size=(2,2), activation='swish'),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=10,  activation='swish'),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 792
+
+Accuracy :: 95.25
+Val Accuracy :: 89.36
+
+-----------------------------------------------------------------------------------------------------------
+Goodresults Trial
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(2, kernel_size=(1,2), activation=my_func),
+    keras.layers.Conv2D(3, kernel_size=(1,2), strides=(1, 2), activation=my_func),
+    keras.layers.Conv2D(2, kernel_size=(2,2), strides=(1, 2), activation=my_func),
+    keras.layers.Conv2D(2, kernel_size=(2,2), strides=(1, 2), activation=my_func),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=12,  activation=my_func),
+    keras.layers.Dense(units=6,  activation=my_func),
+    keras.layers.Dense(units=4)
+])
+
+Trainable Parameters :: 259
+
+Accuracy :: 94.33
+Val Accuracy :: 91.39
+
+-------------------------------------------------------------------------------------------------------------
+model = keras.Sequential([
+    keras.layers.InputLayer(input_shape=(5, 10, 2)),
+    keras.layers.Conv2D(2, kernel_size=(1,2), activation=my_func),
+    keras.layers.Conv2D(3, kernel_size=(1,2), strides=(1, 2), activation=my_func),
+    keras.layers.BatchNormalization(),
+    keras.layers.Conv2D(3, kernel_size=(2,2), strides=(1, 2), activation=my_func),
+    keras.layers.Conv2D(2, kernel_size=(2,2), strides=(1, 1), activation=my_func),
+    keras.layers.Flatten(),
+    keras.layers.Dense(units=12,  activation=my_func),
+    keras.layers.Dense(units=6,  activation=my_func),
+    keras.layers.Dense(units=4)
+])
+
+
+
+
+
+
+
+
